@@ -6,16 +6,18 @@ import WhyChooseUsComp from '../../components/Home/WhyChooseUsComp';
 import VisionAndMissionComp from '../../components/Home/VisionAndMissionComp';
 import ContactForm from '../../components/Home/ContactForm';
 import Footer from '../../components/Footer/Footer';
+import Intro from '../../components/Home/Intro';
 const Home = () => {
   return (
     <div className="bg-black min-h-screen">
-          <Navbar />
-          <BannerComp />
-          <ServiceComp />
-          <WhyChooseUsComp />
-          <VisionAndMissionComp />
-          <ContactForm />
-          <Footer/>
+      <Navbar />
+      <BannerComp />
+      <Intro/>
+      <ServiceComp />
+      <WhyChooseUsComp />
+      <VisionAndMissionComp />
+      <ContactForm />
+      <Footer />
     </div>
   );
 }

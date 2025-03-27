@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import banner1 from "../../assets/images/banner1.jpg";
 import banner2 from "../../assets/images/banner2.jpg";
+import logo from "../../assets/images/logo.png";
 
 const BannerComp = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -32,12 +33,9 @@ const BannerComp = () => {
       </div>
       {/* Centered text */}
       <div className="relative h-full flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-7xl font-sans">
-            <span className="text-yellow-400 font-bold">G</span>
-            <span className="text-white font-light">eonpix</span>
-          </h1>
-        </div>
+      <div className="flex items-center">
+        <img src={logo} alt="" className="h-[50px] w-auto" />
+      </div>
       </div>
       {/* Image indicator dots */}
       <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">

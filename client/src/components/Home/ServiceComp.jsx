@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Code, Monitor, Smartphone } from "lucide-react";
-
+import img from "../../assets/images/brando-makes-branding-ljurPRAnLAQ-unsplash.jpg";
 const ServiceComp = () => {
   const [highlightedService, setHighlightedService] =
-    useState("Academic Projects");
+    useState("Mobile Development");
 
-  const services = ["Academic Projects", "UI/UX Design", "Web Development"];
+  const services = ["Mobile Development", "Web Development", "UI/UX Design"];
 
   // Rotate through service titles
   useEffect(() => {
@@ -23,27 +22,45 @@ const ServiceComp = () => {
   // Service card data
   const serviceCards = [
     {
-      title: "UI/UX Design",
-      icon: <Monitor className="w-16 h-16 text-yellow-400" />,
-      description:
-        "We empower businesses with state-of-the-art mobile applications for iOS and Android, blending blending next-generation technology, intuitive design,...",
-    },
-    {
       title: "Mobile Development",
-      icon: <Smartphone className="w-16 h-16 text-yellow-400" />,
+      image: img,
       description:
-        "We empower businesses with state-of-the-art mobile applications for iOS and Android, blending blending next-generation technology, intuitive design,...",
+        "We empower businesses with innovative, high-performance mobile applications for iOS and Android, next-generation technology, intuitive design, and seamless functionality. Our solutions are designed to enhance user...",
     },
     {
       title: "Web Development",
-      icon: <Code className="w-16 h-16 text-yellow-400" />,
+      image: img,
       description:
-        "We empower businesses with state-of-the-art mobile applications for iOS and Android, blending blending next-generation technology, intuitive design,...",
+        "We craft dynamic, high-performing websites tailored to meet the evolving needs of businesses. Our web development solutions combine cutting-edge technology, intuitive design, and seamless functionality to deliver exceptional user experience...",
+    },
+    {
+      title: "UI/UX Design",
+      image: img,
+      description:
+        "We design immersive, user-centric UI/UX solutions that blend creativity with functionality. Our approach focuses on intuitive navigation, visually compelling aesthetics, and seamless interactions to enhance user engagement...",
+    },
+    {
+      title: "Graphic Design",
+      image: img,
+      description:
+        "We create visually captivating and strategically crafted graphic designs that leave a lasting impact. Our designs combine creativity, innovation, and brand storytelling to enhance visual identity and audience engagement...",
+    },
+    {
+      title: "Branding",
+      image: img,
+      description:
+        "We build powerful and memorable brand identities that resonate with audiences and drive business success. Our branding solutions combine strategic thinking, creative storytelling, and visual excellence...",
+    },
+    {
+      title: "Academic Projects",
+      image: img,
+      description:
+        "We provide expert guidance and development for academic projects, delivering high-quality research, innovative solutions, and structured methodologies. Our services cater to students and professionals...",
     },
   ];
 
   return (
-    <div className="bg-black text-white py-16 px-6 h-screen">
+    <div className="bg-black text-white py-16 px-6">
       {/* Heading Section */}
       <div className="text-center mb-16">
         <h2 className="text-4xl font-light mb-2">We Provide Services</h2>
@@ -66,21 +83,31 @@ const ServiceComp = () => {
         {serviceCards.map((service, index) => (
           <div
             key={index}
-            className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-lg p-6 border border-gray-800 flex flex-col items-center text-center"
+            className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-lg overflow-hidden border border-gray-800 flex flex-col"
           >
-            <div className="mb-4">{service.icon}</div>
+            {/* Image */}
+            <div className="h-64 overflow-hidden">
+              <img
+                src={service.image}
+                alt={service.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
 
-            <h3 className="text-xl font-medium mb-4">{service.title}</h3>
-
-            <p className="text-gray-300 text-sm mb-8">{service.description}</p>
-
-            <a
-              href="#"
-              className="mt-auto bg-yellow-400 text-black rounded-full px-6 py-2 flex items-center font-medium hover:bg-yellow-300 transition"
-            >
-              Learn More
-              <span className="ml-2">→</span>
-            </a>
+            {/* Content */}
+            <div className="p-6 flex flex-col flex-grow">
+              <h3 className="text-xl font-medium mb-4">{service.title}</h3>
+              <p className="text-gray-300 text-sm mb-8 flex-grow">
+                {service.description}
+              </p>
+              <a
+                href="#"
+                className="mt-auto bg-yellow-400 text-black rounded-full px-6 py-2 flex items-center font-medium hover:bg-yellow-300 transition self-start"
+              >
+                Learn More
+                <span className="ml-2">→</span>
+              </a>
+            </div>
           </div>
         ))}
       </div>

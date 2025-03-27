@@ -1,13 +1,13 @@
 import React from "react";
 import { ChevronDown } from "lucide-react";
+import logo from "../../assets/images/logo.png";
 
 const Navbar = () => {
   return (
     <nav className="bg-transparent w-full flex justify-between items-center px-6 py-4 fixed top-0 left-0 z-50 backdrop-blur-md">
       {/* Logo Section */}
       <div className="flex items-center">
-        <span className="text-yellow-400 font-bold text-3xl">G</span>
-        <span className="text-white font-light text-3xl">eonpix</span>
+        <img src={logo} alt="" className="h-[50px] w-auto" />
       </div>
 
       {/* Navigation Links */}
